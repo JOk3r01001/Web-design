@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <title>Dentico+ — Zubní klinika</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Moderní zubní klinika: dentální hygiena, implantologie, ortodoncie a další. Objednejte se online.">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <a class="skip-link" href="#obsah">Přejít k obsahu</a>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="logo" href="./index.html" aria-label="Dentico+ domů">
+        <img src="./images/logo.svg" alt="Dentico+ logo" width="120" height="28">
+      </a>
+
+      <nav class="main-nav" role="navigation" aria-label="Hlavní navigace">
+        <ul>
+          <li><a href="./index.html" aria-current="page">Domů</a></li>
+          <li><a href="./vysetreni.html">Vyšetření</a></li>
+          <li><a href="./lekari.html">Lékaři</a></li>
+          <li><a href="./kontakt.html">Kontakt</a></li>
+          <li class="nav-cta"><a class="btn btn-primary" href="./rezervace.html">Rezervace</a></li>
+        </ul>
+      </nav>
+
+      <form class="search" role="search" action="./vysledky.html" method="get" aria-label="Vyhledávání na webu">
+        <label for="q" class="visually-hidden">Hledat</label>
+        <input id="q" name="q" type="search" placeholder="Hledat: hygieny, implantáty…" required>
+        <button type="submit" class="btn">Hledat</button>
+      </form>
+    </div>
+  </header>
+
+  <main id="obsah">
+    <section aria-labelledby="lekari-title">
+      <div class="container">
+        <header class="section-head">
+          <h1>Tým odborníků</h2>
+          <p>Seznamte se s našimi lékaři a jejich specializacemi.</p>
+        </header>
+
+        <div class="doctors-list" role="list">
+          <article class="doctor-card" role="listitem">
+            <img src="./images/doctors/novak.jpg" alt="MUDr. Jan Novák, implantolog" width="320" height="320" loading="lazy">
+            <div class="doctor-info">
+              <h3>MUDr. Jan Novák</h3>
+              <p>Implantologie, chirurgie</p>
+              <a class="btn btn-ghost" href="./lekar-detail.html#novak">Zobrazit profil</a>
+            </div>
+          </article>
+
+          <article class="doctor-card" role="listitem">
+            <img src="./images/doctors/kovarova.jpg" alt="MDDr. Petra Kovářová, ortodoncie" width="320" height="320" loading="lazy">
+            <div class="doctor-info">
+              <h3>MDDr. Petra Kovářová</h3>
+              <p>Ortodoncie</p>
+              <a class="btn btn-ghost" href="./lekar-detail.html#kovarova">Zobrazit profil</a>
+            </div>
+          </article>
+
+          <article class="doctor-card" role="listitem">
+            <img src="./images/doctors/ruzicka.jpg" alt="MDDr. Tomáš Růžička, endodoncie" width="320" height="320" loading="lazy">
+            <div class="doctor-info">
+              <h3>MDDr. Tomáš Růžička</h3>
+              <p>Endodoncie</p>
+              <a class="btn btn-ghost" href="./lekar-detail.html#ruzicka">Zobrazit profil</a>
+            </div>
+          </article>
+          
+          <article class="doctor-card" role="listitem">
+            <img src="./images/doctors/svobodova.jpg" alt="Bc. Kateřina Svobodová, dentální hygiena" width="320" height="320" loading="lazy">
+            <div class="doctor-info">
+              <h3>Bc. Kateřina Svobodová</h3>
+              <p>Dentální hygiena</p>
+              <a class="btn btn-ghost" href="./lekar-detail.html#svobodova">Zobrazit profil</a>
+            </div>
+          </article>
+
+          <article class="doctor-card" role="listitem">
+            <img src="./images/doctors/dvorak.jpg" alt="PhDr. Martin Dvořák, protetika" width="320" height="320" loading="lazy">
+            <div class="doctor-info">
+              <h3>PhDr. Martin Dvořák</h3>
+              <p>Protetika, CAD/CAM</p>
+              <a class="btn btn-ghost" href="./lekar-detail.html#dvorak">Zobrazit profil</a>
+            </div>
+          </article>
+
+          <article class="doctor-card" role="listitem">
+            <img src="./images/doctors/benesova.jpg" alt="MUDr. Alena Benešová, parodontologie" width="320" height="320" loading="lazy">
+            <div class="doctor-info">
+              <h3>MUDr. Alena Benešová</h3>
+              <p>Parodontologie</p>
+              <a class="btn btn-ghost" href="./lekar-detail.html#benesova">Zobrazit profil</a>
+            </div>
+          </article>
+
+          <article class="doctor-card" role="listitem">
+            <img src="./images/doctors/kral.jpg" alt="MUDr. Pavel Král, chirurgie" width="320" height="320" loading="lazy">
+            <div class="doctor-info">
+              <h3>MUDr. Pavel Král</h3>
+              <p>Orální chirurgie</p>
+              <a class="btn btn-ghost" href="./lekar-detail.html#kral">Zobrazit profil</a>
+            </div>
+          </article>
+
+          <article class="doctor-card" role="listitem">
+            <img src="./images/doctors/maresova.jpg" alt="MUDr. Lucie Marešová, RTG & 3D diagnostika" width="320" height="320" loading="lazy">
+            <div class="doctor-info">
+              <h3>MUDr. Lucie Marešová</h3>
+              <p>RTG, CBCT, 3D diagnostika</p>
+              <a class="btn btn-ghost" href="./lekar-detail.html#maresova">Zobrazit profil</a>
+            </div>
+          </article>
+
+          <article class="doctor-card" role="listitem">
+            <img src="./images/doctors/kratochvilova.jpg" alt="MDDr. Hana Kratochvílová, estetická stomatologie" width="320" height="320" loading="lazy">
+            <div class="doctor-info">
+              <h3>MDDr. Hana Kratochvílová</h3>
+              <p>Estetická stomatologie</p>
+              <a class="btn btn-ghost" href="./lekar-detail.html#kratochvilova">Zobrazit profil</a>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>&copy; 2025 Dentico+. Všechna práva vyhrazena.</p>
+      <nav aria-label="Odkazy v patičce">
+        <ul class="footer-links">
+          <li><a href="./pristupnost.html">Prohlášení o přístupnosti</a></li>
+          <li><a href="./podminky.html">Podmínky použití</a></li>
+          <li><a href="./soukromi.html">Zpracování osobních údajů</a></li>
+        </ul>
+      </nav>
+      <p>Autoři: Jonáš Podzemský, Jakub Hrubý, Adam Suk a Radek Bártl.</p>
+    </div>
+
+  </footer>
+</body>
+</html>
