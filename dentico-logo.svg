@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200">
+  <!-- Pozadí (volitelné, můžeš odstranit pokud chceš transparentní) -->
+  <rect width="600" height="200" fill="#ffffff"/>
+
+  <!-- Definice přechodu pro text -->
+  <defs>
+    <linearGradient id="accentGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#B8FF89"/>
+      <stop offset="100%" stop-color="#8af85e"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Nápis DENTICO -->
+  <text x="120" y="115"
+        font-family="Poppins, Arial, sans-serif"
+        font-weight="900"
+        font-size="64"
+        fill="url(#accentGradient)"
+        letter-spacing="2">
+    DENTICO
+  </text>
+
+  <!-- Symbol + (jednoduchý, plochý, silný tvar) -->
+  <rect x="490" y="55" width="16" height="60" rx="2" fill="#8af85e"/>
+  <rect x="463" y="82" width="70" height="16" rx="2" fill="#8af85e"/>
+</svg>
