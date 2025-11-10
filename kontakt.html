@@ -10,15 +10,23 @@
 <body>
   <a class="skip-link" href="#obsah">Přejít k obsahu</a>
 
-  <!-- HEADER -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
       <a class="logo" href="./index.html" aria-label="Dentico+ domů">
         <img src="dentico-logo.svg" alt="Dentico+ logo" width="120" height="28">
       </a>
 
+      <input class="nav-toggle-checkbox" type="checkbox" id="nav-toggle" />
+
+      <label class="mobile-nav-toggle" for="nav-toggle">
+        <span class="visually-hidden">Menu</span>
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </label>
+
       <nav class="main-nav" role="navigation" aria-label="Hlavní navigace">
-        <ul>
+        <ul id="main-nav-links">
           <li><a href="./index.html" aria-current="page">Domů</a></li>
           <li><a href="./vysetreni.html">Vyšetření</a></li>
           <li><a href="./lekari.html">Lékaři</a></li>
@@ -33,7 +41,7 @@
         <button type="submit" class="btn">Hledat</button>
       </form>
     </div>
-  </header>
+  </header> 
 
   <main id="obsah">
     <!-- KONTAKT + TABULKA + ASIDE -->
