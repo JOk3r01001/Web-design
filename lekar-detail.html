@@ -8,17 +8,23 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <a class="skip-link" href="#obsah">Přejít k obsahu</a>
-
-  <!-- HEADER -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
       <a class="logo" href="./index.html" aria-label="Dentico+ domů">
-        <img src="./images/logo.svg" alt="Dentico+ logo" width="120" height="28">
+        <img src="dentico-logo.svg" alt="Dentico+ logo" width="120" height="28">
       </a>
 
+      <input class="nav-toggle-checkbox" type="checkbox" id="nav-toggle" />
+
+      <label class="mobile-nav-toggle" for="nav-toggle">
+        <span class="visually-hidden">Menu</span>
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </label>
+
       <nav class="main-nav" role="navigation" aria-label="Hlavní navigace">
-        <ul>
+        <ul id="main-nav-links">
           <li><a href="./index.html" aria-current="page">Domů</a></li>
           <li><a href="./vysetreni.html">Vyšetření</a></li>
           <li><a href="./lekari.html">Lékaři</a></li>
@@ -33,7 +39,7 @@
         <button type="submit" class="btn">Hledat</button>
       </form>
     </div>
-  </header>
+  </header> 
 
   <main id="obsah">
     <section aria-label="Profily lékařů">
@@ -44,7 +50,7 @@
             <h1 id="novak-title">MUDr. Jan Novák</h1>
             <p class="mb-5" style="font-size: var(--font-size-lg); color: var(--color-muted);">Hlavní lékař, specialista na implantologii a chirurgii.</p>
             
-            <img src="./images/doctors/novak.jpg" alt="Portrét MUDr. Jana Nováka" width="320" height="320" loading="lazy" class="round-lg shadow-md mb-5" style="border-radius: 50%; width: 200px; height: 200px; object-fit: cover;">
+            <img src="images/novak.png" alt="Portrét MUDr. Jana Nováka" width="320" height="320" loading="lazy" class="round-lg shadow-md mb-5" style="border-radius: 50%; width: 200px; height: 200px; object-fit: cover;">
             
             <p>MUDr. Jan Novák je vedoucím lékařem kliniky Dentico+ a uznávaným odborníkem v oblasti dentoalveolární chirurgie a implantologie. Své více než 15leté zkušenosti zúročuje při řešení i těch nejsložitějších případů náhrad zubů.</p>
             

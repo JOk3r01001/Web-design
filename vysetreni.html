@@ -10,15 +10,23 @@
 <body>
   <a class="skip-link" href="#obsah">Přejít k obsahu</a>
 
-  <!-- HEADER -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
       <a class="logo" href="./index.html" aria-label="Dentico+ domů">
-        <img src="./images/logo.svg" alt="Dentico+ logo" width="120" height="28">
+        <img src="dentico-logo.svg" alt="Dentico+ logo" width="120" height="28">
       </a>
 
+      <input class="nav-toggle-checkbox" type="checkbox" id="nav-toggle" />
+
+      <label class="mobile-nav-toggle" for="nav-toggle">
+        <span class="visually-hidden">Menu</span>
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </label>
+
       <nav class="main-nav" role="navigation" aria-label="Hlavní navigace">
-        <ul>
+        <ul id="main-nav-links">
           <li><a href="./index.html" aria-current="page">Domů</a></li>
           <li><a href="./vysetreni.html">Vyšetření</a></li>
           <li><a href="./lekari.html">Lékaři</a></li>
@@ -33,7 +41,7 @@
         <button type="submit" class="btn">Hledat</button>
       </form>
     </div>
-  </header>
+  </header> 
 
   <main id="obsah">
     <section aria-labelledby="sluzby-title">
@@ -48,7 +56,7 @@
             <header>
               <h3>Dentální hygiena</h3>
             </header>
-            <img src="./images/services/hygiena.jpg" alt="Dentální hygienistka při ošetření" width="480" height="320" loading="lazy">
+            <img src="vysetreni/DH.png" alt="Dentální hygienistka při ošetření" width="480" height="320" loading="lazy">
             <p>Profesionální odstranění plaku a pigmentací, instrukce domácí péče.</p>
             <a class="card-link" href="./vysetreni-detail.html#hygiena">Detail služby</a>
           </article>
@@ -57,7 +65,7 @@
             <header>
               <h3>Implantologie</h3>
             </header>
-            <img src="./images/services/implantologie.jpg" alt="Zubní implantát v čelistní kosti" width="640" height="400" loading="lazy">
+            <img src="vysetreni/imp.jpg" alt="Zubní implantát v čelistní kosti" width="640" height="400" loading="lazy">
             <p>Náhrada chybějících zubů pomocí titanových implantátů s dlouhodobou životností.</p>
             <a class="card-link" href="./vysetreni-detail.html#implantologie">Detail služby</a>
           </article>
@@ -66,7 +74,7 @@
             <header>
               <h3>Estetická stomatologie</h3>
             </header>
-            <img src="./images/services/estetika.jpg" alt="Bělení zubů a estetické fazety" width="480" height="320" loading="lazy">
+            <img src="vysetreni/beleni.jpg" alt="Bělení zubů a estetické fazety" width="480" height="320" loading="lazy">
             <p>Bělení, fazety a kompozitní výplně pro přirozeně krásný úsměv.</p>
             <a class="card-link" href="./vysetreni-detail.html#estetika">Detail služby</a>
           </article>
@@ -75,7 +83,7 @@
             <header>
               <h3>Ortodoncie</h3>
             </header>
-            <img src="./images/services/ortodoncie.jpg" alt="Neviditelná rovnátka" width="480" height="320" loading="lazy">
+            <img src="vysetreni/invisi.jpg" alt="Neviditelná rovnátka" width="480" height="320" loading="lazy">
             <p>Neviditelná rovnátka a klasické aparáty pro děti i dospělé.</p>
             <a class="card-link" href="./vysetreni-detail.html#ortodoncie">Detail služby</a>
           </article>
@@ -84,7 +92,7 @@
             <header>
               <h3>Protetika</h3>
             </header>
-            <img src="./images/services/protetika.jpg" alt="Korunky a můstky" width="480" height="320" loading="lazy">
+            <img src="vysetreni/veneers.jpg" alt="Korunky a můstky" width="480" height="320" loading="lazy">
             <p>Korunky, můstky a onlaye z kvalitních materiálů s CAD/CAM.</p>
             <a class="card-link" href="./vysetreni-detail.html#protetika">Detail služby</a>
           </article>
@@ -93,7 +101,7 @@
             <header>
               <h3>Endodoncie pod mikroskopem</h3>
             </header>
-            <img src="./images/services/endodoncie.jpg" alt="Mikroskopické ošetření kořenových kanálků" width="640" height="400" loading="lazy">
+            <img src="vysetreni/osm.jpg" alt="Mikroskopické ošetření kořenových kanálků" width="640" height="400" loading="lazy">
             <p>Precizní ošetření kořenových kanálků s vysokou úspěšností.</p>
             <a class="card-link" href="./vysetreni-detail.html#endodoncie">Detail služby</a>
           </article>
@@ -102,7 +110,7 @@
             <header>
               <h3>Dětská stomatologie</h3>
             </header>
-            <img src="./images/services/detska.jpg" alt="Dítě v zubní ordinaci" width="480" height="320" loading="lazy">
+            <img src="vysetreni/ChildDen.jpg" alt="Dítě v zubní ordinaci" width="480" height="320" loading="lazy">
             <p>Citlivý přístup, prevence a bezbolestné ošetření pro nejmenší.</p>
             <a class="card-link" href="./vysetreni-detail.html#detska">Detail služby</a>
           </article>
@@ -111,7 +119,7 @@
             <header>
               <h3>Chirurgie</h3>
             </header>
-            <img src="./images/services/chirurgie.jpg" alt="Chirurgické odstranění zubů moudrosti" width="480" height="320" loading="lazy">
+            <img src="vysetreni/chir.jpg" alt="Chirurgické odstranění zubů moudrosti" width="480" height="320" loading="lazy">
             <p>Extrakcí počínaje po augmentace kostí v lokální anestezii.</p>
             <a class="card-link" href="./vysetreni-detail.html#chirurgie">Detail služby</a>
           </article>
@@ -120,7 +128,7 @@
             <header>
               <h3>Parodontologie</h3>
             </header>
-            <img src="./images/services/parodontologie.jpg" alt="Ošetření parodontu" width="480" height="320" loading="lazy">
+            <img src="vysetreni/paradont.jpg" alt="Ošetření parodontu" width="480" height="320" loading="lazy">
             <p>Léčba zánětů dásní a parodontitidy, udržovací terapie.</p>
             <a class="card-link" href="./vysetreni-detail.html#parodontologie">Detail služby</a>
           </article>
@@ -129,7 +137,7 @@
             <header>
               <h3>Rentgen & 3D</h3>
             </header>
-            <img src="./images/services/rtg.jpg" alt="CBCT 3D snímek" width="480" height="320" loading="lazy">
+            <img src="vysetreni/Xray.jpg" alt="CBCT 3D snímek" width="480" height="320" loading="lazy">
             <p>Digitální RTG a CBCT pro bezpečnou a přesnou diagnostiku.</p>
             <a class="card-link" href="./vysetreni-detail.html#rtg">Detail služby</a>
           </article>
