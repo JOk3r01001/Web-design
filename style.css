@@ -279,8 +279,8 @@ h3 {
 
 /* Hero */
 main {
-  background: linear-gradient(0deg, var(--color-surface), transparent 40%),
-              radial-gradient(150% 40% at 10% 5%, var(--color-accent) 0%, transparent 55%);
+  background: linear-gradient(0deg, var(--color-surface), transparent 5%),
+              radial-gradient(150% 25% at 10% 5%, var(--color-accent) 0%, transparent 55%);
   padding-block: clamp(2rem, 4vw, 3rem);
   border-bottom: 1px solid var(--color-border);
 }
