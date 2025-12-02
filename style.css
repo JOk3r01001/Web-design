@@ -184,7 +184,7 @@ h3 {
 }
 
 .btn-primary:hover {
-  background: var(--color-accent-strong);
+  background: var(--color-accent-strong) !important;
 }
 
 .btn-outline {
@@ -281,7 +281,7 @@ h3 {
 main {
   background: linear-gradient(0deg, var(--color-surface), transparent 5%),
               radial-gradient(150% 25% at 10% 5%, var(--color-accent) 0%, transparent 55%);
-  padding-bottom: clamp(2rem, 4vw, 3rem);
+  padding-block: 5px;
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -457,7 +457,7 @@ main {
   gap: .5rem;
   align-items: center;
   list-style: none;
-  padding: .35rem .5rem;
+  padding: .35rem 0;
   margin: 0;
 }
 
