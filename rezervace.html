@@ -50,87 +50,72 @@
         <li aria-current="page">Objednat se</li>
       </ol>
     </nav>
-    <section id="rezervace" aria-labelledby="rez-title">
-      <div class="container">
-        <header class="section-head">
-          <h1>Objednejte se online</h2>
-          <p>Vyplňte formulář, potvrďte termín a je hotovo.</p>
-        </header>
+    <main id="obsah">
+      <section id="rezervace" aria-labelledby="rez-title">
+        <div class="container">
+          <header class="section-head">
+            <h1 id="rez-title">Objednejte se online — Krok 1</h1>
+            <p>Vyplňte základní údaje a vyberte službu. Na další stránce zvolíte termín.</p>
+          </header>
 
-        <form class="booking-form" action="./rezervace.html" method="get" novalidate>
-          <fieldset>
-            <legend>Krok 1 — Základní údaje</legend>
-            <div class="field">
-              <label for="fullname">Jméno a příjmení</label>
-              <input id="fullname" name="fullname" type="text" autocomplete="name" required>
-            </div>
-            <div class="field">
-              <label for="email">E-mail</label>
-              <input id="email" name="email" type="email" autocomplete="email" required>
-            </div>
-            <div class="field">
-              <label for="phone">Telefon</label>
-              <input id="phone" name="phone" type="tel" autocomplete="tel">
-            </div>
-          </fieldset>
+          <form class="booking-form" action="./rezervace-step2.html" method="get" novalidate>
+            <fieldset>
+              <legend>Krok 1 — Základní údaje a výběr služby</legend>
+              <div class="field">
+                <label for="fullname">Jméno a příjmení</label>
+                <input id="fullname" name="fullname" type="text" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="email">E-mail</label>
+                <input id="email" name="email" type="email" autocomplete="email" required>
+              </div>
+              <div class="field">
+                <label for="phone">Telefon</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel">
+              </div>
+            </fieldset>
 
-          <fieldset>
-            <legend>Krok 2 — Termín</legend>
-            <div class="field">
-              <label for="service">Služba</label>
-              <select id="service" name="service" required>
-                <option value="">Vyberte službu</option>
-                <option value="hygiena">Dentální hygiena</option>
-                <option value="implantologie">Implantologie</option>
-                <option value="estetika">Estetická stomatologie</option>
-                <option value="ortodoncie">Ortodoncie</option>
-                <option value="protetika">Protetika</option>
-                <option value="endodoncie">Endodoncie pod mikroskopem</option>
-                <option value="detska">Dětská stomatologie</option>
-                <option value="chirurgie">Chirurgie</option>
-                <option value="parodontologie">Parodontologie</option>
-                <option value="rtg">Rentgen &amp; 3D</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="doctor">Lékař</label>
-              <select id="doctor" name="doctor">
-                <option value="">Nezáleží</option>
-                <option value="novak">MUDr. Jan Novák</option>
-                <option value="kovarova">MDDr. Petra Kovářová</option>
-                <option value="ruzicka">MDDr. Tomáš Růžička</option>
-                <option value="svobodova">Bc. Kateřina Svobodová</option>
-                <option value="dvorak">PhDr. Martin Dvořák</option>
-                <option value="benesova">MUDr. Alena Benešová</option>
-                <option value="kral">MUDr. Pavel Král</option>
-                <option value="maresova">MUDr. Lucie Marešová</option>
-                <option value="kratochvilova">MDDr. Hana Kratochvílová</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="date">Datum</label>
-              <input id="date" name="date" type="date" required>
-            </div>
-            <div class="field">
-              <label for="time">Čas</label>
-              <input id="time" name="time" type="time" required>
-            </div>
-          </fieldset>
+            <fieldset>
+              <legend>Vyberte službu</legend>
+              <div class="field">
+                <label for="service">Služba</label>
+                <select id="service" name="service" required>
+                  <option value="">Vyberte službu</option>
+                  <option value="hygiena">Dentální hygiena</option>
+                  <option value="implantologie">Implantologie</option>
+                  <option value="estetika">Estetická stomatologie</option>
+                  <option value="ortodoncie">Ortodoncie</option>
+                  <option value="protetika">Protetika</option>
+                  <option value="endodoncie">Endodoncie pod mikroskopem</option>
+                  <option value="detska">Dětská stomatologie</option>
+                  <option value="chirurgie">Chirurgie</option>
+                  <option value="parodontologie">Parodontologie</option>
+                  <option value="rtg">Rentgen &amp; 3D</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="doctor">Preferovaný lékař (volitelně)</label>
+                <select id="doctor" name="doctor">
+                  <option value="">Nezáleží</option>
+                  <option value="novak">MUDr. Jan Novák</option>
+                  <option value="kovarova">MDDr. Petra Kovářová</option>
+                  <option value="ruzicka">MDDr. Tomáš Růžička</option>
+                  <option value="svobodova">Bc. Kateřina Svobodová</option>
+                  <option value="dvorak">PhDr. Martin Dvořák</option>
+                  <option value="benesova">MUDr. Alena Benešová</option>
+                  <option value="kral">MUDr. Pavel Král</option>
+                  <option value="maresova">MUDr. Lucie Marešová</option>
+                  <option value="kratochvilova">MDDr. Hana Kratochvílová</option>
+                </select>
+              </div>
+            </fieldset>
 
-          <fieldset>
-            <legend>Krok 3 — Potvrzení</legend>
-            <div class="field field-checkbox">
-              <input id="gdpr" name="gdpr" type="checkbox" required>
-              <label for="gdpr">Souhlasím se zpracováním osobních údajů pro účely objednání.</label>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Další — vybrat termín</button>
             </div>
-          </fieldset>
-
-          <div class="form-actions">
-            <a href="./rezervace-potvrzeni.html" class="btn btn-primary">Pokračovat na potvrzení</a>
-          </div>
-        </form>
-      </div>
-    </section>
+          </form>
+        </div>
+      </section>
     </main>
 
 
