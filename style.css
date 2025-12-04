@@ -457,7 +457,7 @@ main {
   gap: .5rem;
   align-items: center;
   list-style: none;
-  padding: .35rem 0;
+  padding: var(--gap-4) 0rem;
   margin: 0;
 }
 
