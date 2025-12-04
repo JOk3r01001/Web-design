@@ -826,6 +826,16 @@ select:focus {
   .hero-inner { grid-template-columns: 1fr; }
 }
 
+/* Stack contact columns on narrow screens for better mobile viewing */
+@media (max-width: 720px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+  .contact-aside {
+    margin-top: var(--gap-4);
+  }
+}
+
 /* Utilities */
 figure { margin: 0; }
 .card-link { font-weight: 600; }
