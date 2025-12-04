@@ -329,7 +329,11 @@ main {
   box-shadow: var(--shadow-sm);
 }
 
-.service-card img {
+  .service-card img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  display: block;
   border-radius: var(--radius);
 }
 
@@ -833,7 +837,6 @@ label[for^="modal-"] { cursor: pointer; }
 
 /* Footer */
 .site-footer {
-  border-top: 1px solid var(--color-border);
   background: #fff;
 }
 
@@ -843,7 +846,7 @@ label[for^="modal-"] { cursor: pointer; }
   align-items: center;
   justify-content: space-between;
   gap: var(--gap-4);
-  padding: 1rem 0;
+  padding: var(--gap-6) 0;
   flex-direction: column;
   align-items: flex-start;
 }
@@ -974,11 +977,9 @@ label[for^="modal-"] { cursor: pointer; }
     
     width: 64px;
     height: 64px;
-    background: #333;
+    background: var(--color-text);
     border-radius: 50%;
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    border: 2px solid #fff;
-    
     grid-column: auto;
     grid-row: auto;
     margin: 0;
@@ -987,7 +988,7 @@ label[for^="modal-"] { cursor: pointer; }
   .hamburger-inner, 
   .hamburger-inner::before, 
   .hamburger-inner::after {
-    background-color: #f2f2f2 !important; 
+    background-color: var(--color-accent) !important; 
   }
 
   /* 5. Mobile Menu Container */
@@ -1050,6 +1051,16 @@ label[for^="modal-"] { cursor: pointer; }
 
 @media (max-width: 720px) {
   .hero-inner { grid-template-columns: 1fr; }
+}
+
+/* Stack contact columns on narrow screens for better mobile viewing */
+@media (max-width: 720px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+  .contact-aside {
+    margin-top: var(--gap-4);
+  }
 }
 
 /* Utilities */
