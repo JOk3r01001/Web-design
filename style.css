@@ -337,9 +337,7 @@ main {
   margin-top: .25rem;
 }
 
-.service-card .card-link {
-  align-self: flex-start;
-}
+
 
 .service-span-2 {
   grid-column: span 8;
@@ -510,6 +508,77 @@ main {
   gap: var(--gap-6);
 }
 
+/* Make booking form narrower on desktop and full-width on small screens */
+.booking-form {
+  width: 50%;
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+@media (max-width: 720px) {
+  .booking-form {
+    width: 100%;
+    padding-inline: .5rem; /* small side padding on small screens */
+  }
+}
+.form-progress {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  font-size: .95rem;
+  margin-bottom: var(--gap-4);
+}
+.form-progress .step {
+  padding: .35rem .6rem;
+  border-radius: 999px;
+  background: var(--color-surface-2);
+  color: var(--color-muted);
+  font-weight: 700;
+}
+.form-progress .step.active {
+  background: var(--color-accent);
+  color: #082c23;
+}
+
+.field .error {
+  color: #b00020;
+  font-size: .875rem;
+  margin-top: .25rem;
+  display: none; /* shown only when the related control is invalid */
+}
+
+/* Show inline error messages for invalid controls (CSS-only) */
+input:invalid + .error,
+select:invalid + .error,
+input:invalid ~ .error,
+select:invalid ~ .error {
+  display: block;
+}
+
+/* Visual cue on invalid inputs */
+input:invalid,
+select:invalid,
+textarea:invalid {
+  border-color: #b00020;
+}
+
+.form-error-summary {
+  border: 1px solid #f2c0c0;
+  background: #fff4f4;
+  color: #800;
+  padding: .75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: var(--gap-4);
+}
+
+.required-indicator { color: #b00020; margin-left: .25rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .form-progress .step { transition: none; }
+}
+
 fieldset {
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
@@ -552,7 +621,6 @@ select {
   border-radius: var(--radius);
   background: #fff;
 }
-
 input:focus,
 select:focus {
   border-color: var(--color-link);
@@ -574,9 +642,167 @@ select:focus {
   grid-template-columns: 2fr 1fr;
 }
 
-.contact-main .map {
-  margin-top: var(--gap-5);
+  
+.booking-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(4,6,8,0.55);
+  display: none; /* hidden by default */
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 9999;
 }
+
+.booking-modal {
+  background: #fff;
+  border-radius: 12px;
+  max-width: 980px;
+  width: var(--container);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+  position: relative;
+  padding: 1rem;
+}
+
+.booking-modal .booking-content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.booking-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.booking-modal .booking-form { width: 50%; margin: 0 auto; }
+.booking-modal .booking-form .field { width: 100%; }
+
+/* Center the fieldset inside the modal on all sizes (including phones) */
+.booking-modal .booking-form fieldset {
+  max-width: 720px; /* keep fieldset readable on large screens */
+  margin: 0 auto; /* center horizontally */
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .booking-modal .booking-form fieldset {
+    max-width: 92%; /* allow breathing room on smaller screens */
+    padding-inline: .5rem; /* small horizontal padding for inputs */
+  }
+}
+
+.booking-modal .form-actions { justify-content: center; }
+
+.booking-modal .booking-form .form-actions {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.booking-modal .booking-form .form-actions > * {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: .7rem 1rem;
+  line-height: 1.1;
+  font-size: inherit;
+  min-width: 140px;
+  flex: 1 1 0;
+  max-width: 360px;
+  box-sizing: border-box;
+  height: auto;
+}
+
+@media (max-width: 900px) {
+  .booking-modal .booking-form .form-actions {
+    flex-direction: column;
+    gap: .65rem;
+    align-items: stretch;
+    padding: 0 .5rem 1rem;
+  }
+  .booking-modal .booking-form .form-actions > * {
+    width: 100%;
+    min-width: 0;
+  }
+}
+.booking-modal .booking-step { margin-bottom: 0.6rem; }
+
+@media (max-width: 900px) {
+  .booking-modal { width: 92vw; margin: 1.25rem auto; }
+  .booking-modal .booking-form { width: 100%; }
+  /* Add extra vertical breathing room on small screens */
+  .booking-modal { max-height: calc(100vh - 2.5rem); overflow: auto; }
+  .booking-modal .form-actions { gap: .6rem; }
+}
+
+/* Prevent background from being reachable while modal open */
+body.modal-open { overflow: hidden; }
+
+/* Show overlay when modal radios (step1/step2/confirmed) are checked */
+#modal-step1:checked ~ main #booking-modal-overlay,
+#modal-step2:checked ~ main #booking-modal-overlay,
+#modal-confirmed:checked ~ main #booking-modal-overlay,
+#modal-step1:checked ~ #booking-modal-overlay,
+#modal-step2:checked ~ #booking-modal-overlay,
+#modal-confirmed:checked ~ #booking-modal-overlay {
+  display: flex;
+}
+
+/* Step toggling: show step1 when #modal-step1 checked, show step2 when #modal-step2 checked */
+#modal-step1:checked ~ main #booking-modal-overlay .booking-step[data-step="1"],
+#modal-step1:checked ~ #booking-modal-overlay .booking-step[data-step="1"] {
+  display: block;
+}
+#modal-step1:checked ~ main #booking-modal-overlay .booking-step[data-step="2"],
+#modal-step1:checked ~ #booking-modal-overlay .booking-step[data-step="2"] {
+  display: none;
+}
+#modal-step2:checked ~ main #booking-modal-overlay .booking-step[data-step="1"],
+#modal-step2:checked ~ #booking-modal-overlay .booking-step[data-step="1"] {
+  display: none;
+}
+#modal-step2:checked ~ main #booking-modal-overlay .booking-step[data-step="2"],
+#modal-step2:checked ~ #booking-modal-overlay .booking-step[data-step="2"] {
+  display: block;
+}
+/* If confirmed, hide the form steps (confirmation shown via modal-confirmed below) */
+#modal-confirmed:checked ~ main #booking-modal-overlay .booking-step[data-step="1"],
+#modal-confirmed:checked ~ #booking-modal-overlay .booking-step[data-step="1"],
+#modal-confirmed:checked ~ main #booking-modal-overlay .booking-step[data-step="2"],
+#modal-confirmed:checked ~ #booking-modal-overlay .booking-step[data-step="2"] {
+  display: none;
+}
+
+#modal-confirmed:checked ~ main #booking-modal-overlay #modal-confirmation,
+#modal-confirmed:checked ~ #booking-modal-overlay #modal-confirmation {
+  display: block;
+}
+#modal-confirmed:checked ~ main #booking-modal-overlay #modal-booking-form,
+#modal-confirmed:checked ~ #booking-modal-overlay #modal-booking-form {
+  display: none;
+}
+
+/* Hide confirmation by default and ensure form is visible by default */
+#booking-modal-overlay #modal-confirmation {
+  display: none;
+}
+#booking-modal-overlay #modal-booking-form {
+  display: block;
+}
+
+/* Ensure modal overlay covers entire viewport and prevents clicks to background */
+.booking-modal-overlay { pointer-events: auto; }
+.booking-modal-overlay * { pointer-events: auto; }
+
+/* Small tweak for labels acting as buttons */
+label[for^="modal-"] { cursor: pointer; }
 
 .contact-aside {
   background: var(--color-surface);
@@ -695,7 +921,7 @@ select:focus {
 }
 
 /* --- MOBILE MEDIA QUERIES --- */
-@media (max-width: 980px) {
+@media (max-width: 984px) {
   /* 1. Header */
   .site-header {
     backdrop-filter: none !important;
@@ -828,8 +1054,7 @@ select:focus {
 
 /* Utilities */
 figure { margin: 0; }
-.card-link { font-weight: 600; }
-.map img { border-radius: var(--radius); box-shadow: var(--shadow-sm); }
+ 
 strong { font-weight: 700; }
 hr { border: 0; border-top: 1px solid var(--color-border); margin: var(--gap-6) 0; }
 
@@ -873,7 +1098,7 @@ select:focus-visible {
   .hero-media,
   .section-actions,
   .form-actions,
-  .map { display: none !important; }
+  
   a { text-decoration: none; }
   body { color: #000; }
 }
