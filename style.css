@@ -329,7 +329,11 @@ main {
   box-shadow: var(--shadow-sm);
 }
 
-.service-card img {
+  .service-card img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  display: block;
   border-radius: var(--radius);
 }
 
