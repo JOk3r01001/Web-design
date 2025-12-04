@@ -9,11 +9,7 @@
 </head>
 <body>
   <a class="skip-link" href="#obsah">Přejít k obsahu</a>
-  <!-- CSS-only modal radios (closed / step1 / step2 / confirmed) -->
-  <input type="radio" id="modal-closed" name="modal-state" checked hidden>
-  <input type="radio" id="modal-step1" name="modal-state" hidden>
-  <input type="radio" id="modal-step2" name="modal-state" hidden>
-  <input type="radio" id="modal-confirmed" name="modal-state" hidden>
+
   <header class="site-header" role="banner">
     <div class="container header-inner">
       <a class="logo" href="./index.html" aria-label="Dentico+ domů">
@@ -35,7 +31,7 @@
           <li><a href="./vysetreni.html">Vyšetření</a></li>
           <li><a href="./lekari.html">Lékaři</a></li>
           <li><a href="./kontakt.html">Kontakt</a></li>
-          <li class="nav-cta"><label for="modal-step1" class="btn btn-primary" role="button">Objednat se</label></li>
+          <li class="nav-cta"><a href="./objednavka.html" class="btn btn-primary">Objednat se</a></li>
         </ul>
       </nav>
 
@@ -54,7 +50,7 @@
           <h1>Moderní zubní péče s úsměvem</h1>
           <p>Špičková technologie, citlivý přístup a transparentní ceny. Objednejte se online během jedné minuty.</p>
           <div class="hero-actions">
-             <label for="modal-step1" class="btn btn-primary" role="button">Objednat se</label>
+            <a href="#" class="btn btn-primary">Objednat se</a>
             <a href="./vysetreni.html" class="btn btn-outline">Zobrazit vyšetření</a>
           </div>
         </div>
@@ -63,114 +59,7 @@
         </figure>
       </div>
     </section>
-    
-    <!-- Booking modal (CSS-only: controlled by radio inputs) -->
-    <div id="booking-modal-overlay" class="booking-modal-overlay" aria-hidden="true">
-      <div class="booking-modal" role="dialog" aria-modal="true" aria-labelledby="booking-title">
-        <label for="modal-closed" class="booking-close" aria-label="Zavřít rezervaci">✕</label>
-        <div class="booking-content">
-          <h2 id="booking-title">Objednávka</h2>
-          <div id="modal-error-summary" class="form-error-summary" role="alert" aria-live="assertive" style="display:none;"></div>
 
-          <form id="modal-booking-form" class="booking-form">
-            <!-- STEP 1 -->
-            <div class="booking-step" data-step="1">
-              <fieldset>
-                <legend>Krok 1 — Základní údaje a výběr služby</legend>
-                <div class="field">
-                  <label for="m-fullname">Jméno a příjmení</label>
-                  <input id="m-fullname" name="fullname" type="text" autocomplete="name" required minlength="2" pattern="^[A-Za-zÀ-ž\s'.-]{2,}$" value="Jan Novák">
-                  <div class="error" id="m-err-fullname" aria-live="polite" data-msg="Zadejte jméno a příjmení (min. 2 znaky)"></div>
-                </div>
-                <div class="field">
-                  <label for="m-email">E-mail</label>
-                  <input id="m-email" name="email" type="email" autocomplete="email" required value="jan@priklad.cz">
-                  <div class="error" id="m-err-email" aria-live="polite" data-msg="Zadejte platný e-mail (např. jan@priklad.cz)"></div>
-                </div>
-                <div class="field">
-                  <label for="m-phone">Telefon</label>
-                  <input id="m-phone" name="phone" type="tel" autocomplete="tel" pattern="\+?[0-9\s-]{6,20}" value="+420 123 456 789">
-                  <div class="error" id="m-err-phone" aria-live="polite" data-msg="Zadejte telefon (+420123456789 nebo 123456789)"></div>
-                </div>
-                <div class="field">
-                  <label for="m-service">Služba</label>
-                  <select id="m-service" name="service" required>
-                    <option value="">Vyberte službu</option>
-                    <option value="hygiena" selected>Dentální hygiena</option>
-                    <option value="implantologie">Implantologie</option>
-                    <option value="estetika">Estetická stomatologie</option>
-                    <option value="ortodoncie">Ortodoncie</option>
-                    <option value="protetika">Protetika</option>
-                    <option value="endodoncie">Endodoncie pod mikroskopem</option>
-                    <option value="detska">Dětská stomatologie</option>
-                    <option value="chirurgie">Chirurgie</option>
-                    <option value="parodontologie">Parodontologie</option>
-                    <option value="rtg">Rentgen &amp; 3D</option>
-                  </select>
-                  <div class="error" id="m-err-service" aria-live="polite" data-msg="Vyberte službu"></div>
-                </div>
-                <div class="field">
-                  <label for="m-doctor">Preferovaný lékař (volitelně)</label>
-                  <select id="m-doctor" name="doctor">
-                    <option value="">Nezáleží</option>
-                    <option value="novak">MUDr. Jan Novák</option>
-                    <option value="kovarova">MDDr. Petra Kovářová</option>
-                    <option value="ruzicka">MDDr. Tomáš Růžička</option>
-                    <option value="svobodova">Bc. Kateřina Svobodová</option>
-                    <option value="dvorak">PhDr. Martin Dvořák</option>
-                    <option value="benesova">MUDr. Alena Benešová</option>
-                    <option value="kral">MUDr. Pavel Král</option>
-                    <option value="maresova">MUDr. Lucie Marešová</option>
-                    <option value="kratochvilova">MDDr. Hana Kratochvílová</option>
-                  </select>
-                </div>
-              </fieldset>
-                <div class="form-actions mt-4">
-                  <label for="modal-step2" class="btn btn-primary" role="button">Další — vybrat termín</label>
-                </div>
-            </div>
-
-            <!-- STEP 2 -->
-            <div class="booking-step" data-step="2">
-              <fieldset>
-                <legend>Krok 2 — Termín</legend>
-                <div id="modal-summary" style="margin-bottom:1rem; color:var(--color-muted);"></div>
-                <div class="field">
-                  <label for="m-date">Datum</label>
-                  <input id="m-date" name="date" type="date" required value="2025-12-04">
-                  <div class="error" id="m-err-date" aria-live="polite" data-msg="Vyberte datum"></div>
-                </div>
-                <div class="field">
-                  <label for="m-time">Čas</label>
-                  <input id="m-time" name="time" type="time" required value="10:00">
-                  <div class="error" id="m-err-time" aria-live="polite" data-msg="Vyberte čas"></div>
-                </div>
-              </fieldset>
-              <fieldset>
-                <legend>Souhlas</legend>
-                <div class="field field-checkbox">
-                  <input id="m-gdpr" name="gdpr" type="checkbox" required checked>
-                  <label for="m-gdpr">Souhlasím se zpracováním osobních údajů pro účely objednání.</label>
-                  <div class="error" id="m-err-gdpr" aria-live="polite" data-msg="Musíte souhlasit se zpracováním osobních údajů"></div>
-                </div>
-              </fieldset>
-              <div class="form-actions mt-4">
-                  <label for="modal-step1" class="btn">Zpět</label>
-                  <label for="modal-confirmed" id="modal-step2-submit" class="btn btn-primary">Potvrdit rezervaci</label>
-              </div>
-            </div>
-          </form>
-
-          <div id="modal-confirmation" aria-hidden="true">
-            <h3>Děkujeme — rezervace přijata</h3>
-            <p id="modal-confirmation-text" style="color:var(--color-muted);">Vaše rezervace byla přijata. Brzy vás kontaktujeme emailem nebo telefonem.</p>
-            <div class="form-actions">
-                <label for="modal-closed" class="btn btn-primary">Hotovo</label>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <section class="news" aria-labelledby="novinky-title">
       <div class="container">
         <header class="section-head">
@@ -232,7 +121,6 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
       <p>&copy; 2025 Dentico+. Všechna práva vyhrazena.</p>
@@ -245,7 +133,7 @@
         </ul>
       </nav>
     </div>
-
   </footer>
+
 </body>
 </html>
