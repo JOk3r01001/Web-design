@@ -92,21 +92,6 @@ main {
 .hero-actions{display:flex;gap:var(--gap-3);flex-wrap:wrap}
 .hero-media{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);margin-top:var(--gap-4)}
 
-/* Services grid - use auto-fit for responsiveness */
-.services-grid{display:grid;gap:clamp(.5rem,2vw,1rem);grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.service-card{display:flex;flex-direction:column;gap:var(--gap-3);background:#fff;border:1px solid var(--color-border);border-radius:var(--radius);padding:var(--gap-4);box-shadow:var(--shadow-sm)}
-.service-card img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:calc(var(--radius) - 4px)}
-.service-card h3{margin-top:.25rem}
-.service-span-2{grid-column:span 2}
-
-/* Doctors */
-.doctors{padding-block:var(--section-space);background:var(--color-surface)}
-.doctors-list{display:flex;gap:clamp(.75rem,2.2vw,1.25rem);flex-wrap:wrap;align-items:stretch}
-.doctor-card{flex:1 1 240px;min-width:220px;background:#fff;border:1px solid var(--color-border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);display:flex;gap:var(--gap-3)}
-.doctor-card img{width:120px;height:120px;margin:var(--gap-3);border-radius:6%;object-fit:cover;object-position:15% 0%}
-.doctor-info{padding:var(--gap-3);display:flex;flex-direction:column;gap:.35rem}
-.doctor-info p{color:var(--color-muted);margin:0 0 .5rem}
-
 /* News */
 .news{padding-block:var(--section-space)}
 .news-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--gap-4)}
@@ -474,6 +459,7 @@ main {
   margin-top: var(--gap-6);
 }
 
+
 /* Services grid */
 .services-grid {
   display: grid;
@@ -493,43 +479,86 @@ main {
   box-shadow: var(--shadow-sm);
 }
 
-  .service-card img {
+.service-card img {
   width: 100%;
-  aspect-ratio: 16/10;
+  height: 220px;
   object-fit: cover;
-  display: block;
   border-radius: var(--radius);
 }
 
-.service-card h3 {
-  margin-top: .25rem;
+.service-card.span-2 img {
+  height: 220px;
+  object-fit: cover;
 }
 
-.service-span-2 {
+.service-card.span-2 {
   grid-column: span 8;
 }
 
 @media (max-width: 920px) {
-  .service-card {
-    grid-column: span 6;
-  }
-  .service-span-2 {
-    grid-column: span 12;
-  }
-}
-
-@media (max-width: 620px) {
   .service-card,
-  .service-span-2 {
+  .service-card.span-2 {
     grid-column: span 12;
   }
 }
 
-/* Doctors (flex) */
+/* Doctors section */
 .doctors {
   padding-block: var(--section-space);
   background: var(--color-surface);
 }
+
+.doctors-list {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 900px) {
+  .doctors-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .doctors-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.doctor-card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.doctor-media {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.doctor-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  border-radius: inherit;
+}
+
+@media (max-width: 600px) {
+  .doctor-media {
+    aspect-ratio: 4 / 4;
+  }
+}
+
 
 /* News */
 .news {

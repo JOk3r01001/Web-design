@@ -7,16 +7,18 @@
   <meta name="description" content="Moderní zubní klinika: dentální hygiena, implantologie, ortodoncie a další. Objednejte se online.">
   <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
   <a class="skip-link" href="#obsah">Přejít k obsahu</a>
 
   <header class="site-header" role="banner">
     <div class="container header-inner">
+      
       <a class="logo" href="./index.html" aria-label="Dentico+ domů">
         <img src="images/logo.svg" alt="Dentico+ logo" width="130" height="50">
       </a>
 
-      <input class="nav-toggle-checkbox" type="checkbox" id="nav-toggle" />
+      <input class="nav-toggle-checkbox" type="checkbox" id="nav-toggle">
 
       <label class="mobile-nav-toggle" for="nav-toggle">
         <span class="visually-hidden">Menu</span>
@@ -25,7 +27,7 @@
         </span>
       </label>
 
-      <nav class="main-nav" role="navigation" aria-label="Hlavní navigace">
+      <nav class="main-nav" aria-label="Hlavní navigace">
         <ul id="main-nav-links">
           <li><a href="./index.html">Domů</a></li>
           <li><a href="./vysetreni.html" aria-current="page">Vyšetření</a></li>
@@ -40,100 +42,114 @@
         <input id="q" name="q" type="search" placeholder="Zadejte hledání" required>
         <button type="submit" class="btn">Hledat</button>
       </form>
+
     </div>
-  </header> 
+  </header>
 
   <main id="obsah">
-    <nav class="breadcrumb" aria-label="Navigace" role="navigation">
+
+    <nav class="breadcrumb" aria-label="Navigace">
       <ol>
         <li><a href="./index.html">Domů</a></li>
         <li aria-current="page">Vyšetření</li>
       </ol>
     </nav>
+
     <section aria-labelledby="sluzby-title">
       <div class="container">
+
         <header class="section-head">
           <h2 id="sluzby-title">Jaká vyšetření poskytujeme</h2>
-          <p>Poskytujeme široké spektrum stomatologických výkonů — od pravidelných preventivních prohlídek a profesionální dentální hygieny, přes konzervativní a estetická ošetření, ortodoncii a protetiku, až po implantologii, endodoncii a specializovanou chirurgii. Diagnostiku provádíme digitálním RTG a 3D CBCT. Naši odborní lékaři dbají na bezbolestný přístup, individuální plán léčby a dlouhodobé výsledky.</p>
+          <p>
+            Poskytujeme široké spektrum stomatologických výkonů — od pravidelných preventivních prohlídek a profesionální
+            dentální hygieny, přes konzervativní a estetická ošetření, ortodoncii a protetiku, až po implantologii,
+            endodoncii a specializovanou chirurgii. Diagnostiku provádíme digitálním RTG a 3D CBCT.
+          </p>
         </header>
 
-        <div class="services-grid" role="list">
-          <article class="service-card" role="listitem">
-            <header>
-              <h3>Dentální hygiena</h3>
-            </header>
-            <img src="vysetreni/DH.jpg" alt="Dentální hygienistka při ošetření" width="480" height="320" loading="lazy">
+        <div class="services-grid">
+
+          <article class="service-card">
+            <img src="images/vysetreni/DH.jpg" alt="Dentální hygienistka při ošetření" loading="lazy">
+            <h3>Dentální hygiena</h3>
             <p>Profesionální odstranění plaku a pigmentací, instrukce domácí péče.</p>
             <a class="btn" href="./vysetreni-detail.html#hygiena">Detail vyšetření</a>
           </article>
 
-          <article class="service-card service-span-2" role="listitem">
-            <header>
-              <h3>Implantologie</h3>
-            </header>
-            <img src="vysetreni/imp.jpg" alt="Zubní implantát v čelistní kosti" width="640" height="400" loading="lazy">
-            <p>Náhrada chybějících zubů pomocí titanových implantátů s dlouhodobou životností.</p>
+          <article class="service-card span-2">
+            <img src="images/vysetreni/imp.jpg" alt="Zubní implantát v čelistní kosti" loading="lazy">
+            <h3>Implantologie</h3>
+            <p>
+              Náhrada chybějících zubů pomocí pevných titanových implantátů s přirozeným vzhledem. 
+              Zajišťují dlouhodobou stabilitu a pohodlné každodenní fungování.
+            </p>
             <a class="btn" href="./vysetreni-detail.html#implantologie">Detail vyšetření</a>
           </article>
 
-          <article class="service-card" role="listitem">
-            <header>
-              <h3>Estetická stomatologie</h3>
-            </header>
-            <img src="vysetreni/beleni.jpg" alt="Bělení zubů a estetické fazety" width="480" height="320" loading="lazy">
+          <article class="service-card">
+            <img src="images/vysetreni/beleni.jpg" alt="Bělení zubů a estetické fazety" loading="lazy">
+            <h3>Estetická stomatologie</h3>
             <p>Bělení, fazety a kompozitní výplně pro přirozeně krásný úsměv.</p>
             <a class="btn" href="./vysetreni-detail.html#estetika">Detail vyšetření</a>
           </article>
 
-          <article class="service-card" role="listitem">
-            <header>
-              <h3>Ortodoncie</h3>
-            </header>
-            <img src="vysetreni/invisi.jpg" alt="Neviditelná rovnátka" width="480" height="320" loading="lazy">
+          <article class="service-card">
+            <img src="images/vysetreni/invisi.jpg" alt="Neviditelná rovnátka" loading="lazy">
+            <h3>Ortodoncie</h3>
             <p>Neviditelná rovnátka a klasické aparáty pro děti i dospělé.</p>
             <a class="btn" href="./vysetreni-detail.html#ortodoncie">Detail vyšetření</a>
           </article>
 
-          <article class="service-card" role="listitem">
-            <header>
-              <h3>Protetika</h3>
-            </header>
-            <img src="vysetreni/veneers.jpg" alt="Korunky a můstky" width="480" height="320" loading="lazy">
+          <article class="service-card">
+            <img src="images/vysetreni/veneers.jpg" alt="Korunky a můstky" loading="lazy">
+            <h3>Protetika</h3>
             <p>Korunky, můstky a onlaye z kvalitních materiálů s CAD/CAM.</p>
             <a class="btn" href="./vysetreni-detail.html#protetika">Detail vyšetření</a>
           </article>
 
-
-          <article class="service-card" role="listitem">
-            <header>
-              <h3>Chirurgie</h3>
-            </header>
-            <img src="vysetreni/chir.jpg" alt="Chirurgické odstranění zubů moudrosti" width="480" height="320" loading="lazy">
+          <article class="service-card">
+            <img src="images/vysetreni/chir.jpg" alt="Chirurgické odstranění zubů moudrosti" loading="lazy">
+            <h3>Chirurgie</h3>
             <p>Extrakcí počínaje po augmentace kostí v lokální anestezii.</p>
             <a class="btn" href="./vysetreni-detail.html#chirurgie">Detail vyšetření</a>
           </article>
 
-          <article class="service-card" role="listitem">
-            <header>
-              <h3>Parodontologie</h3>
-            </header>
-            <img src="vysetreni/paradontOG.jpg" alt="Ošetření parodontu" width="480" height="320" loading="lazy">
-            <p>Léčba zánětů dásní a parodontitidy, udržovací terapie.</p>
+          <article class="service-card span-2">
+            <img src="images/vysetreni/paradontOG.jpg" alt="Ošetření parodontu" loading="lazy">
+            <h3>Parodontologie</h3>
+            <p>
+              Léčba zánětů dásní a parodontitidy s cílem obnovit stabilitu a zdraví tkání. 
+              Součástí je i pravidelná udržovací péče pro dlouhodobý efekt.
+            </p>
             <a class="btn" href="./vysetreni-detail.html#parodontologie">Detail vyšetření</a>
           </article>
 
-          <article class="service-card" role="listitem">
-            <header>
-              <h3>Rentgen & 3D</h3>
-            </header>
-            <img src="vysetreni/Xray.jpg" alt="CBCT 3D snímek" width="480" height="320" loading="lazy">
+          <article class="service-card">
+            <img src="images/vysetreni/Xray.jpg" alt="CBCT 3D snímek" loading="lazy">
+            <h3>Rentgen & 3D</h3>
             <p>Digitální RTG a CBCT pro bezpečnou a přesnou diagnostiku.</p>
             <a class="btn" href="./vysetreni-detail.html#rtg">Detail vyšetření</a>
           </article>
+
+          <article class="service-card">
+            <img src="images/vysetreni/Endodoncie.jpg" alt="Název služby" loading="lazy">
+            <h3>Endodoncie</h3>
+            <p>Šetrné ošetření kořenových kanálků pro záchranu zubu a úlevu od bolesti.</p>
+            <a class="btn" href="#">Detail vyšetření</a>
+          </article>
+
+          <article class="service-card">
+            <img src="images/vysetreni/fluoridace.jpg" alt="Název služby" loading="lazy">
+            <h3>Profesionální fluoridace</h3>
+            <p>Posílení zubní skloviny a snížení rizika kazů pomocí profesionální fluoridace.</p>
+            <a class="btn" href="#">Detail vyšetření</a>
+          </article>
+
         </div>
 
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer" role="contentinfo">
@@ -148,7 +164,7 @@
       </nav>
       <p>Autoři: Jonáš Podzemský, Jakub Hrubý, Adam Suk a Radek Bártl.</p>
     </div>
-
   </footer>
+
 </body>
 </html>
